@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - CivicConnect</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="bgstyle.css">
+    <link rel="stylesheet" href="backgroundstyle.css">
+    <script src = "chatbot2.js"></script>
+</head>
+<body class="bg-gray-200">
+    <video class="video-bg" autoplay muted loop>
+        <source src="Background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <nav class="bg-gray-900 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="LearnMore.html" class="text-1xl font-bold">CivicConnect</a>
+            <div>
+                <div class="relative group">
+                    <a href="#" class="text-4xl font-semibold hover:text-gray-400">Help</a>
+                    <div class="absolute hidden group-hover:block bg-gray-800 text-white text-sm p-4 rounded-lg shadow-lg w-64 mt-2 right-0 z-10">
+                        <p>Sign in with your registered email and password!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <br>
+    <div class = "flex justify-center">
+        <div class="mb-6 md:mb-0 md:mr-8">
+            <img src="logo.png" alt="CivicConnect Logo" class="w-40 h-40 md:w-52 md:h-52 rounded-full object-cover shadow-lg border-4 border-white">
+        </div>
+        </div>
+
+    <div class="min-h-screen py-12 px-4">
+        <div class="container mx-auto max-w-md">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h1 class="text-3xl font-bold mb-8 text-center">Welcome Back!</h1>
+                
+                <form id="signinForm" class="space-y-6">
+                    <div id="error-message" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative hidden">
+                        Invalid email or password. Please try again.
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 mb-2">Email Address</label>
+                        <input type="email" id="email" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 mb-2">Password</label>
+                        <input type="password" id="password" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <!-- <label class="flex items-center">
+                            <input type="checkbox" id="rememberMe" class="mr-2">
+                            <span class="text-gray-700">Remember Me</span>
+                        </label> -->
+                        <!-- <a href="forgot-password.html" class="text-blue-600 hover:underline">Forgot Password?</a> -->
+                    </div>
+                    
+                    <button type="button" onclick="handleSignIn(event)" class="w-full bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                        Sign In
+                    </button>
+                </form>
+
+                <div class="mt-6 text-center">
+                    <p class="text-gray-600">Don't have an account? 
+                        <a href="2.html" class="text-blue-600 hover:underline">Sign up</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-gray-900 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400">&copy; 2025 CivicConnect. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        async function handleSignIn(event) {
+            event.preventDefault();
+            
+            document.getElementById("error-message").classList.add("hidden");
+            
+            const formData = {
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value
+            };
+    
+            if (!formData.email || !formData.password) {
+                showError("Please fill in all fields.");
+                return;
+            }
+    
+            try {
+                const response = await fetch(`http://localhost:5000/api/users/${formData.email}`);
+                
+                if (!response.ok) {
+                    showError("No account found with this email. Please sign up first.");
+                    return;
+                }
+    
+                const userData = await response.json();
+                
+                if (userData.password === formData.password) {
+                    localStorage.setItem("userEmail", formData.email);
+                    localStorage.setItem("comingFromSignin", "true");
+                    window.location.href = '3.html';
+                } else {
+                    showError("Invalid password. Please try again.");
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                showError("An error occurred. Please try again later.");
+            }
+        }
+    
+        function showError(message) {
+            const errorElement = document.getElementById("error-message");
+            errorElement.textContent = message;
+            errorElement.classList.remove("hidden");
+        }
+    </script>
+</body>
+</html>

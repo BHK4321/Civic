@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification - CivicConnect</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src = "chatbot2.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="bgstyle.css">
+    <link rel="stylesheet" href="backgroundstyle.css">
+</head>
+<body class="bg-gray-100 text-blue-800">
+     <!-- Background Slideshow -->
+     <!-- <div class="slideshow">
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+    </div> -->
+    <video class="video-bg" autoplay muted loop>
+        <source src="Background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <nav class="bg-gray-900 text-white py-4">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <a href="LearnMore.html" class="text-4xl font-bold">CivicConnect</a>
+            <div class="space-x-4">
+                <a id="auth-link" style="display: none;" href="signin.html" class="hover:text-gray-300 hidden">Sign In /
+                    Sign Up</a>
+                <div class="flex space-x-4">
+                    <button id="verifyi" style="display: none;" onclick="window.location.href = '3.html'"
+                        class="hidden bg-red-600 px-4 py-2 rounded hover:bg-red-700">
+                        Not-verified!
+                    </button>
+                    <button id="logout-btn" style="display: none;" onclick="logout()"
+                        class="hidden bg-red-600 px-4 py-2 rounded hover:bg-red-700">
+                        Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="bg-white p-16 rounded-lg shadow-lg">
+        <div class="mb-6 md:mb-0 md:mr-8">
+            <img src="logo.png" alt="CivicConnect Logo" class="w-20 h-20 md:w-40 md:h-40 rounded-full object-cover shadow-lg mx-auto border-4 border-white">
+        </div>
+        <br>
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl font-bold flex justify-center">Key Civic Domains of Foreign interest</h1>
+            <br>
+            <h6 class = "flex justify-center text-gray-800">Updated by Ministry of External Affairs</h6>
+        </div>
+    </div>
+
+
+    <main class="container mx-auto py-12 px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
+
+            <a href="Educationlinternational.html" class="w-full max-w-xs transform transition-transform hover:scale-105">
+                <div class="bg-white text-blue-900 p-6 rounded-lg shadow-lg text-center h-full flex flex-col items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> 
+                        <path d="M4 8l8-4 8 4"></path> 
+                        <path d="M6 10v6a6 6 0 0 0 12 0v-6"></path>
+                    </svg>
+                    <h2 class="text-2xl font-bold mb-4">Education</h2>
+                    <p class="text-sm">Improving learning opportunities for all.</p>
+                </div>
+            </a>
+
+            <a href="Pubinter.html" class="w-full max-w-xs transform transition-transform hover:scale-105">
+                <div class="bg-white text-blue-900 p-6 rounded-lg shadow-lg text-center h-full flex flex-col items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 12l3-3m12 12l3-3"></path> 
+                        <path d="M3 3l18 18"></path>
+                    </svg>
+                    <h2 class="text-2xl font-bold mb-4">Public Safety</h2>
+                    <p class="text-sm">Ensuring a safe and secure community.</p>
+                </div>
+            </a>
+    
+
+            <a href="Foriegndeals.html" class="w-full max-w-xs transform transition-transform hover:scale-105">
+                <div class="bg-white text-blue-900 p-6 rounded-lg shadow-lg text-center h-full flex flex-col items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"></path> 
+                        <path d="M5 6h14"></path>
+                    </svg>
+                    <h2 class="text-2xl font-bold mb-4">Foreign Deals</h2>
+                    <p class="text-sm">Look at some deals with different countries</p>
+                </div>
+            </a>
+    
+
+            <a href="Comminter.html" class="w-full max-w-xs transform transition-transform hover:scale-105">
+                <div class="bg-white text-blue-900 p-6 rounded-lg shadow-lg text-center h-full flex flex-col items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M16 12l-4-4-4 4"></path>
+                    </svg>
+                    <h2 class="text-2xl font-bold mb-4">Community Events</h2>
+                    <p class="text-sm">Bringing people together for a cause.</p>
+                </div>
+            </a>
+        </div>
+    </main>
+
+
+    <footer class="bg-gray-900 text-white py-6 mt-auto">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-400">&copy; 2025 CivicConnect. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="auth.js"></script>
+</body>
+</html>

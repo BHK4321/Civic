@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Your Civic Interests - CivicConnect</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        alert("You can Update your interests!");
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="bgstyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sigmar&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="backgroundstyle.css">
+    <script src = "chatbot2.js"></script>
+</head>
+<body class="bg-gray-200">
+    <video class="video-bg" autoplay muted loop>
+        <source src="Background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <nav class="bg-gray-900 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="LearnMore.html" class="text-4xl font-bold">CivicConnect</a>
+            <div class="relative group">
+                <a href="#" class="font-semibold hover:text-gray-400">Help</a>
+                <div class="absolute hidden group-hover:block bg-gray-800 text-white text-sm p-4 rounded-lg shadow-lg w-64 mt-2 left-1/1000 transform -translate-x-1/2 z-10">
+                    <p>Tell us your interests so that we could link you with the relevant information!</p>
+                </div>
+            </div>
+        </div>
+    </nav><br><br>
+    <div class = "flex justify-center">
+        <div class="mb-6 md:mb-0 md:mr-8">
+            <img src="logo.png" alt="CivicConnect Logo" class="w-40 h-40 md:w-52 md:h-52 rounded-full object-cover shadow-lg border-4 border-white">
+        </div>
+        </div>
+    
+    <div class="min-h-screen py-12 px-4">
+        <div class="container mx-auto max-w-4xl">
+            <div class="mb-12">
+                <div class="flex justify-between items-center">
+                    <div class="flex-1">
+                        <div class="w-full bg-blue-200 rounded-full h-2">
+                            <div class="w-2/3 h-2 bg-blue-600 rounded-full border-2 border-white"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-between mt-2 text-sm text-gray-600">
+                    <span class="text-blue-600">Account Details</span>
+                    <span>Civic Interests</span>
+                    <span>Verification</span>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h1 class="text-3xl font-bold mb-6 text-center">Tell Us Your Interests</h1>
+                <p class="text-gray-600 text-center mb-8">Help us personalize your civic engagement experience</p>
+
+                <form class="space-y-8">
+                    <div class="space-y-4">
+                        <h2 class="text-xl font-semibold mb-4">Priority Issues</h2>
+                        <p class="text-gray-600 mb-4">Select the issues that matter most to you (up to 5)</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <label class="relative flex items-center p-4 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                                <input type="checkbox" id = "education-reform" class="form-checkbox h-5 w-5 text-blue-600">
+                                <span class="ml-3">Education Reform</span>
+                            </label>
+                            <label class="relative flex items-center p-4 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                                <input type="checkbox" id = "public-transportation" class="form-checkbox h-5 w-5 text-blue-600">
+                                <span class="ml-3">Public Transportation</span>
+                            </label>
+                            <label class="relative flex items-center p-4 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                                <input type="checkbox" id = "environmental-protection" class="form-checkbox h-5 w-5 text-blue-600">
+                                <span class="ml-3">Environmental Protection</span>
+                            </label>
+                            <label class="relative flex items-center p-4 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                                <input type="checkbox" id = "public-safety" class="form-checkbox h-5 w-5 text-blue-600">
+                                <span class="ml-3">Public Safety</span>
+                            </label>
+                            <label class="relative flex items-center p-4 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                                <input type="checkbox" id = "housing-affordability" class="form-checkbox h-5 w-5 text-blue-600">
+                                <span class="ml-3">Housing Affordability</span>
+                            </label>
+                            <label class="relative flex items-center p-4 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                                <input type="checkbox" id = "healthcare-access" class="form-checkbox h-5 w-5 text-blue-600">
+                                <span class="ml-3">Healthcare Access</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <h2 class="text-xl font-semibold mb-4">Engagement Preferences</h2>
+                        <p class="text-gray-600 mb-4">How would you like to participate?</p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="p-6 border rounded-lg">
+                                <h3 class="font-semibold mb-4">Participation Level</h3>
+                                <div class="space-y-3">
+                                    <label class="flex items-center space-x-3">
+                                        <input id = "Observer" type="radio" name="participation" class="form-radio h-5 w-5 text-blue-600">
+                                        <span>Observer - Keep me informed</span>
+                                    </label>
+                                    <label id = "Contributor" class="flex items-center space-x-3">
+                                        <input type="radio" name="participation" class="form-radio h-5 w-5 text-blue-600">
+                                        <span>Contributor - Occasional participation</span>
+                                    </label>
+                                    <label id = "Advocate" class="flex items-center space-x-3">
+                                        <input type="radio" name="participation" class="form-radio h-5 w-5 text-blue-600">
+                                        <span>Advocate - Regular involvement</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="p-6 border rounded-lg">
+                                <h3 class="font-semibold mb-4">Communication Preferences</h3>
+                                <div class="space-y-3">
+                                    <label class="flex items-center space-x-3">
+                                        <input type="checkbox" id = "email-updates" class="form-checkbox h-5 w-5 text-blue-600">
+                                        <span>Email Updates</span>
+                                    </label>
+                                    <label class="flex items-center space-x-3">
+                                        <input type="checkbox" id = "mobile-notifications" class="form-checkbox h-5 w-5 text-blue-600">
+                                        <span>Mobile Notifications</span>
+                                    </label>
+                                    <label class="flex items-center space-x-3">
+                                        <input type="checkbox" id = "newsletter" class="form-checkbox h-5 w-5 text-blue-600">
+                                        <span>Newsletter Subscription</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <h2 class="text-xl font-semibold mb-4">Local Government Focus</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-gray-700 mb-2">City Council District</label>
+                                <select id = "city-council-district" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option>Select your district</option>
+                                    <option>District 1</option>
+                                    <option>District 2</option>
+                                    <option>District 3</option>
+                                    <option>District 4</option>
+                                    <option>District 5</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Neighborhood</label>
+                                <select id = "neighborhood" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option>Select your neighborhood</option>
+                                    <option>Downtown</option>
+                                    <option>Midtown</option>
+                                    <option>West End</option>
+                                    <option>East Side</option>
+                                    <option>North District</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <h2 class="text-xl font-semibold mb-4">Skills & Expertise</h2>
+                        <p class="text-gray-600 mb-4">Share your skills to contribute more effectively</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <label class="relative flex items-center p-4 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                                <input type="checkbox" id = "public-speaking" class="form-checkbox h-5 w-5 text-blue-600">
+                                <span class="ml-3">Public Speaking</span>
+                            </label>
+                            <label class="relative flex items-center p-4 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                                <input type="checkbox" id = "community-organizing" class="form-checkbox h-5 w-5 text-blue-600">
+                                <span class="ml-3">Community Organizing</span>
+                            </label>
+                            <label class="relative flex items-center p-4 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                                <input type="checkbox" id = "data-analysis" class="form-checkbox h-5 w-5 text-blue-600">
+                                <span class="ml-3">Data Analysis</span>
+                            </label>
+                            <label class="relative flex items-center p-4 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                                <input type="checkbox" id = "grant-writing" class="form-checkbox h-5 w-5 text-blue-600">
+                                <span class="ml-3">Grant Writing</span>
+                            </label>
+                            <label class="relative flex items-center p-4 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                                <input type="checkbox" id = "project-management" class="form-checkbox h-5 w-5 text-blue-600">
+                                <span class="ml-3">Project Management</span>
+                            </label>
+                            <label class="relative flex items-center p-4 border rounded-lg hover:bg-gray-50 cursor-pointer">
+                                <input type="checkbox" id = "social-media" class="form-checkbox h-5 w-5 text-blue-600">
+                                <span class="ml-3">Social Media</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="flex justify-between space-x-4">
+                        <button type="button" onclick="submitInterests(event)" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                            Continue to Next Step
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-gray-900 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400">&copy; 2025 CivicConnect. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+<script>
+    async function submitInterests(event) {
+    event.preventDefault();
+
+    const email = localStorage.getItem("userEmail");
+    if (!email) {
+        alert("Session expired. Please sign in again.");
+        window.location.href = "signin.html";
+        return;
+    }
+    const formData = {
+        interests: [],
+        participationLevel: document.querySelector("input[name='participation']:checked")?.value || document.querySelector("input[name='participation']").id,
+        communicationPreferences: [],
+        cityCouncilDistrict: document.getElementById("city-council-district").value,
+        neighborhood: document.getElementById("neighborhood").value,
+        skills: []
+    };
+    const interestCheckboxes = document.querySelectorAll("input[type='checkbox']:checked");
+    interestCheckboxes.forEach((checkbox) => {
+        formData.interests.push(checkbox.nextElementSibling.textContent.trim());
+    });
+    const comm = ["email-updates", "mobile-notifications", "newsletter"];
+            comm.forEach(id => {
+        const checkbox = document.getElementById(id);
+        if (checkbox && checkbox.checked) {
+            formData.communicationPreferences.push(id);
+        }
+    });
+    const skill = ["public-speaking", "community-organizing", "data-analysis", "grant-writing", "project-management", "social-media"];
+            skill.forEach(id => {
+        const checkbox = document.getElementById(id);
+        if (checkbox && checkbox.checked) {
+            formData.skills.push(id);
+        }
+    });
+    const part = ["Contributor", "Observer", "Advocate"];
+            part.forEach(id => {
+        const checkbox = document.getElementById(id);
+        if (checkbox && checkbox.checked) {
+            formData.participationLevel = id;
+        }
+    });
+    if (formData.interests.length === 0) {
+        alert("Please select at least one civic interest.");
+        return;
+    }
+    try {
+        const response = await fetch(`http://localhost:5000/api/users/${email}/civic-interests`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData)
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to update civic interests');
+        }
+
+        const responseData = await response.json();
+        console.log("Success:", responseData);
+        const verificationResponse = await fetch(`http://localhost:5000/api/users/${email}`);
+        if(!verificationResponse){
+            alert("First complete the verification!");
+            window.location.href = '4.html';
+            return;
+        }
+        const verificationData = await verificationResponse.json();
+        console.log(verificationData.isVerified);
+        if(verificationData.isVerified){
+            alert("Interests updated!");
+            window.location.href = '5.html';
+        }else{
+            alert("Let's complete the verification!");
+            window.location.href = '4.html';
+        }
+    } catch (error) {
+        alert("Lets's complete the verification!");
+        window.location.href = '4.html';
+    }
+}
+
+</script>

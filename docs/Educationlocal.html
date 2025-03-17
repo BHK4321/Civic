@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Education Projects</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="chatbot2.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="bgstyle.css">
+  <link rel="stylesheet" href="backgroundstyle.css">
+  <link rel="stylesheet" href="glass.css">
+</head>
+<body class="bg-gray-100 text-blue-900">
+  <video class="video-bg" autoplay muted loop>
+    <source src="Background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <nav class="bg-gray-900 text-white p-4 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="LearnMore.html" class="text-1xl font-bold">CivicConnect</a>
+      <div class="space-x-4">
+        <a id="auth-link" style="display: none;" href="signin.html" class="hover:text-gray-300 hidden">Sign In /
+            Sign Up</a>
+        <div class="flex space-x-4">
+            <button id="verifyi" style="display: none;" onclick="window.location.href = '3.html'"
+                class="hidden bg-red-600 px-4 py-2 rounded hover:bg-red-700">
+                Not-verified!
+            </button>
+            <button id="logout-btn" style="display: none;" onclick="logout()"
+                class="hidden bg-red-600 px-4 py-2 rounded hover:bg-red-700">
+                Logout
+            </button>
+        </div>
+    </div>
+    </div>
+  </nav>
+
+  <div class="bg-white p-16 rounded-lg shadow-lg">
+    <div class="flex justify-center mb-6 md:mb-0 md:mr-8">
+      <img src="logo.png" alt="CivicConnect Logo" class="w-40 h-40 md:w-52 md:h-52 rounded-full object-cover shadow-lg border-4 border-white">
+    </div>
+    <br>
+    <div class="container mx-auto px-4">
+      <h1 class="text-4xl font-bold mb-6 flex justify-center">Local Education Projects</h1>
+      <p class="text-xl mb-8 flex justify-center text-gray-800">Enhancing learning opportunities for students in our community.</p>
+    </div>
+  </div>
+  <br>
+
+  <section id="projects" class="container mx-auto px-6 py-16 glass-effect">
+    <h2 class="text-3xl font-bold text-center mb-12">Ongoing Local Projects</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <i data-lucide="monitor" class="w-12 h-12 text-blue-600 mb-4"></i>
+        <h3 class="text-2xl font-bold mb-4">Smart Classrooms Initiative</h3>
+        <p class="text-gray-600">Integrating digital technology into classrooms to enhance interactive learning.</p>
+        <div class="mt-4 space-y-2">
+          <p><strong>Budget:</strong> $500,000</p>
+          <p><strong>Completion:</strong> 70% done</p>
+          <p><strong>Expected Completion:</strong> December 2025</p>
+        </div>
+      </div>
+
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <i data-lucide="utensils" class="w-12 h-12 text-blue-600 mb-4"></i>
+        <h3 class="text-2xl font-bold mb-4">Free School Meal Program</h3>
+        <p class="text-gray-600">Providing free meals to underprivileged children to support better learning.</p>
+        <div class="mt-4 space-y-2">
+          <p><strong>Budget:</strong> $300,000</p>
+          <p><strong>Completion:</strong> 50% done</p>
+          <p><strong>Expected Completion:</strong> June 2025</p>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <i data-lucide="users" class="w-12 h-12 text-blue-600 mb-4"></i>
+        <h3 class="text-2xl font-bold mb-4">Teacher Training Workshops</h3>
+        <p class="text-gray-600">Workshops to improve teaching techniques and classroom engagement strategies.</p>
+        <div class="mt-4 space-y-2">
+          <p><strong>Budget:</strong> $150,000</p>
+          <p><strong>Completion:</strong> 40% done</p>
+          <p><strong>Expected Completion:</strong> September 2025</p>
+        </div>
+      </div>
+
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <i data-lucide="book-open" class="w-12 h-12 text-blue-600 mb-4"></i>
+        <h3 class="text-2xl font-bold mb-4">Library Expansion Program</h3>
+        <p class="text-gray-600">Building new libraries and upgrading existing ones to improve student access to books.</p>
+        <div class="mt-4 space-y-2">
+          <p><strong>Budget:</strong> $250,000</p>
+          <p><strong>Completion:</strong> 60% done</p>
+          <p><strong>Expected Completion:</strong> March 2026</p>
+        </div>
+      </div>
+
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <i data-lucide="atom" class="w-12 h-12 text-blue-600 mb-4"></i>
+        <h3 class="text-2xl font-bold mb-4">STEM Education for Girls</h3>
+        <p class="text-gray-600">Encouraging young women to explore science, technology, engineering, and mathematics.</p>
+        <div class="mt-4 space-y-2">
+          <p><strong>Budget:</strong> $200,000</p>
+          <p><strong>Completion:</strong> 30% done</p>
+          <p><strong>Expected Completion:</strong> December 2026</p>
+        </div>
+      </div>
+
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <i data-lucide="bookmark" class="w-12 h-12 text-blue-600 mb-4"></i>
+        <h3 class="text-2xl font-bold mb-4">After-School Tutoring Program</h3>
+        <p class="text-gray-600">Providing free tutoring sessions for students needing extra academic support.</p>
+        <div class="mt-4 space-y-2">
+          <p><strong>Budget:</strong> $180,000</p>
+          <p><strong>Completion:</strong> 35% done</p>
+          <p><strong>Expected Completion:</strong> August 2026</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+
+  <section id="news" class="container mx-auto px-6 py-16 glass-effect">
+    <h2 class="text-3xl font-bold text-center mb-12">Latest News</h2>
+    <div class="space-y-6">
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h4 class="text-xl font-bold mb-2">Smart Classrooms Installed in 20 Schools</h4>
+        <p class="text-gray-600">As part of the initiative, interactive whiteboards and tablets have been deployed across 20 local schools.</p>
+        <p class="text-gray-400 mt-2"><i>Published: Feb 10, 2025</i></p>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h4 class="text-xl font-bold mb-2">Community Donates $50,000 for School Meals</h4>
+        <p class="text-gray-600">Local businesses and citizens have contributed to ensure more children receive nutritious meals at school.</p>
+        <p class="text-gray-400 mt-2"><i>Published: Feb 5, 2025</i></p>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h4 class="text-xl font-bold mb-2">STEM Education for Girls Gains Momentum</h4>
+        <p class="text-gray-600">The new STEM initiative has enrolled over 500 girls in coding and robotics workshops.</p>
+        <p class="text-gray-400 mt-2"><i>Published: Jan 30, 2025</i></p>
+      </div>
+    </div>
+  </section>
+  <br>
+
+  <div class="bg-white p-16 rounded-lg shadow-lg">
+    <h2 class="text-3xl font-bold mb-4 flex justify-center">Get Involved</h2>
+    <p class="text-xl mb-8 flex justify-center text-gray-800">Support these projects by volunteering or donating.</p>
+    <div class="flex justify-center"><button onclick="window.location.href = 'Contribute.html'" class="bg-green-500 text-white px-8 py-3 rounded-lg hover:bg-green-600 border-4 border-white">Join Us</button></div>
+  </div>
+  <br>
+
+  <footer class="bg-gray-900 text-white py-8 text-center">
+    <div class="container mx-auto px-4">
+      <p class="text-gray-400">&copy; 2025 CivicConnect. All rights reserved.</p>
+    </div>
+  </footer>
+  <script>
+    lucide.createIcons();
+  </script>
+      <script src="auth.js"></script>
+</body>
+</html>

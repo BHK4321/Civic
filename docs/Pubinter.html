@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>International Public Safety</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src = "chatbot2.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="bgstyle.css">
+<link rel="stylesheet" href="backgroundstyle.css">
+<link rel="stylesheet" href="glass.css">
+</head>
+<body class="bg-gray-100 text-blue-900">
+  <video class="video-bg" autoplay muted loop>
+    <source src="Background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+    <nav class="bg-gray-900 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="LearnMore.html" class="text-4xl font-bold">CivicConnect</a>
+          <div class="space-x-4">
+            <a id="auth-link" style="display: none;" href="signin.html" class="hover:text-gray-300 hidden">Sign In /
+                Sign Up</a>
+            <div class="flex space-x-4">
+                <button id="verifyi" style="display: none;" onclick="window.location.href = '3.html'"
+                    class="hidden bg-red-600 px-4 py-2 rounded hover:bg-red-700">
+                    Not-verified!
+                </button>
+                <button id="logout-btn" style="display: none;" onclick="logout()"
+                    class="hidden bg-red-600 px-4 py-2 rounded hover:bg-red-700">
+                    Logout
+                </button>
+            </div>
+        </div>
+        </div>
+    </nav>
+
+  <div class="bg-white p-16 rounded-lg shadow-lg">
+    <div class="mb-6 md:mb-0 md:mr-8">
+      <img src="logo.png" alt="CivicConnect Logo" class="w-20 h-20 md:w-40 md:h-40 rounded-full object-cover shadow-lg mx-auto border-4 border-white">
+  </div>
+  <br>
+    <div class="container mx-auto px-4">
+      <h1 class="text-4xl font-bold mb-6 flex justify-center">International Public Safety</h1>
+      <p class="text-xl mb-8 flex justify-center text-gray-800">Promoting global safety and security through collaborative efforts.</p>
+    </div>
+  </div>
+<br>
+
+  <section id="projects" class="container mx-auto px-6 py-16 glass-effect">
+    <h2 class="text-3xl font-bold text-center mb-12">Ongoing International Safety Projects</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+        <div class="text-blue-600 mb-4">
+          <svg class="h-12 w-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold mb-4">Global Anti-Terrorism Initiative</h3>
+        <p class="text-gray-600">A collaborative effort to combat terrorism worldwide.</p>
+        <div class="mt-4 space-y-2">
+          <p><strong>Budget:</strong> $5 Billion</p>
+          <p><strong>Completion:</strong> 50% done</p>
+          <p><strong>Expected Completion:</strong> December 2026</p>
+        </div>
+      </div>
+
+      <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+        <div class="text-blue-600 mb-4">
+          <svg class="h-12 w-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold mb-4">Disaster Relief Coordination</h3>
+        <p class="text-gray-600">Improving international response to natural disasters.</p>
+        <div class="mt-4 space-y-2">
+          <p><strong>Budget:</strong> $3 Billion</p>
+          <p><strong>Completion:</strong> 40% done</p>
+          <p><strong>Expected Completion:</strong> June 2027</p>
+        </div>
+      </div>
+
+      <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+        <div class="text-blue-600 mb-4">
+          <svg class="h-12 w-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold mb-4">Cybersecurity Collaboration</h3>
+        <p class="text-gray-600">Strengthening global cybersecurity infrastructure.</p>
+        <div class="mt-4 space-y-2">
+          <p><strong>Budget:</strong> $2 Billion</p>
+          <p><strong>Completion:</strong> 30% done</p>
+          <p><strong>Expected Completion:</strong> September 2027</p>
+        </div>
+      </div>
+    </div>
+  </section><br>
+
+  <section id="news" class="container mx-auto px-6 py-16 glass-effect">
+    <h2 class="text-3xl font-bold text-center mb-12">Latest International News</h2>
+    <div class="space-y-6">
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h4 class="text-xl font-bold mb-2">Global Anti-Terrorism Efforts Intensify</h4>
+        <p class="text-gray-600">Countries collaborate to combat terrorism through shared intelligence.</p>
+        <p class="text-gray-400 mt-2"><i>Published: Feb 10, 2025</i></p>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h4 class="text-xl font-bold mb-2">Disaster Relief Teams Deployed</h4>
+        <p class="text-gray-600">International teams respond to natural disasters in affected regions.</p>
+        <p class="text-gray-400 mt-2"><i>Published: Feb 5, 2025</i></p>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h4 class="text-xl font-bold mb-2">Cybersecurity Summit Held</h4>
+        <p class="text-gray-600">Global leaders discuss strategies to strengthen cybersecurity.</p>
+        <p class="text-gray-400 mt-2"><i>Published: Jan 30, 2025</i></p>
+      </div>
+    </div>
+  </section><br>
+
+  <div class="bg-white p-16 rounded-lg shadow-lg">
+    <h2 class="text-3xl font-bold mb-4 flex justify-center">Get Involved</h2>
+    <p class="text-xl text-gray-800 mb-8 flex justify-center">Support international public safety initiatives by volunteering or donating.</p>
+    <div class = "flex justify-center">
+    <button onclick = "window.location.href = 'Contribute.html'" class=" bg-green-500 text-white px-8 py-3 rounded-lg hover:bg-green-600 border-4 border-white">Join Us</button>
+    </div>
+  </div>
+<br>
+
+  <footer class="bg-gray-900 text-white py-6 text-center">
+    <div class="container mx-auto px-4">
+      <p class="text-gray-400">&copy; 2025 CivicConnect International Public Safety Initiative. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="auth.js"></script>
+</body>
+</html>

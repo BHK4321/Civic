@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Infrastructure Projects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="chatbot2.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="bgstyle.css">
+    <link rel="stylesheet" href="backgroundstyle.css">
+    <link rel="stylesheet" href="glass.css">
+</head>
+<body class="bg-gray-100 text-blue-900">
+    <video class="video-bg" autoplay muted loop>
+        <source src="Background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <nav class="bg-gray-900 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="LearnMore.html" class="text-4xl font-bold">CivicConnect</a>
+            <div class="space-x-4">
+                <a id="auth-link" style="display: none;" href="signin.html" class="hover:text-gray-300 hidden">Sign In /
+                    Sign Up</a>
+                <div class="flex space-x-4">
+                    <button id="verifyi" style="display: none;" onclick="window.location.href = '3.html'"
+                        class="hidden bg-red-600 px-4 py-2 rounded hover:bg-red-700">
+                        Not-verified!
+                    </button>
+                    <button id="logout-btn" style="display: none;" onclick="logout()"
+                        class="hidden bg-red-600 px-4 py-2 rounded hover:bg-red-700">
+                        Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="bg-white p-16 rounded-lg shadow-lg">
+        <div class="flex justify-center mb-6 md:mb-0 md:mr-8">
+            <img src="logo.png" alt="CivicConnect Logo" class="w-40 h-40 md:w-52 md:h-52 rounded-full object-cover shadow-lg border-4 border-white">
+        </div>
+        <br>
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold mb-6 flex justify-center">National Infrastructure Development</h1>
+            <p class="text-xl mb-8 flex justify-center text-gray-800">Building a stronger nation with transformative infrastructure projects across the country.</p>
+        </div>
+    </div>
+    <br>
+    <section id="projects" class="container mx-auto px-6 py-16 glass-effect">
+        <h2 class="text-3xl font-bold text-center mb-12">Top National Infrastructure Projects</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="text-blue-600 mb-4">
+                    <svg class="h-12 w-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447-2.724A1 1 0 0021 16.382V5.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">National Highways Expansion</h3>
+                <p class="text-gray-600">Expanding the national highway network for improved connectivity across the country.</p>
+                <div class="mt-4 space-y-2">
+                    <p><strong>Budget:</strong> $10 Billion</p>
+                    <p><strong>Completion:</strong> 30% done</p>
+                    <p><strong>Deadline:</strong> 2028</p>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="text-blue-600 mb-4">
+                    <svg class="h-12 w-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">National Smart Cities Initiative</h3>
+                <p class="text-gray-600">Developing smart cities with advanced infrastructure and technology integration.</p>
+                <div class="mt-4 space-y-2">
+                    <p><strong>Budget:</strong> $20 Billion</p>
+                    <p><strong>Completion:</strong> 50% done</p>
+                    <p><strong>Phase 1 Deadline:</strong> 2026</p>
+                </div>
+            </div>
+
+
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="text-blue-600 mb-4">
+                    <svg class="h-12 w-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Nationwide Railway Modernization</h3>
+                <p class="text-gray-600">Modernizing and expanding the national railway system for better speed and efficiency.</p>
+                <div class="mt-4 space-y-2">
+                    <p><strong>Budget:</strong> $8 Billion</p>
+                    <p><strong>Completion:</strong> 45% done</p>
+                    <p><strong>Launch Date:</strong> 2027</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <section id="news" class="container mx-auto px-6 py-16 glass-effect">
+        <h2 class="text-3xl font-bold text-center mb-12">Latest National Infrastructure News</h2>
+        <div class="space-y-6">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h4 class="text-xl font-bold mb-2">National Highway Upgrades Complete in 5 States</h4>
+                <p class="text-gray-600">Key highways have been upgraded to reduce travel time and improve safety.</p>
+                <p class="text-gray-400 mt-2"><i>Published: Feb 12, 2025</i></p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h4 class="text-xl font-bold mb-2">Smart City Pilot Project in 3 Cities</h4>
+                <p class="text-gray-600">The government has rolled out a pilot project for the Smart Cities initiative.</p>
+                <p class="text-gray-400 mt-2"><i>Published: Feb 8, 2025</i></p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h4 class="text-xl font-bold mb-2">New High-Speed Railway Line to Launch Next Year</h4>
+                <p class="text-gray-600">The new high-speed railway line connecting major cities will launch in 2026.</p>
+                <p class="text-gray-400 mt-2"><i>Published: Jan 25, 2025</i></p>
+            </div>
+        </div>
+    </section>
+    <br>
+    <div class="bg-white p-16 rounded-lg shadow-lg">
+        <h2 class="text-3xl font-bold mb-4 flex justify-center">Get Involved</h2>
+        <p class="text-xl mb-8 flex justify-center text-gray-800">Support national infrastructure development for a better tomorrow.</p>
+        <div class="flex justify-center">
+            <button onclick="window.location.href='Contribute.html'" class="bg-green-500 text-white px-8 py-3 rounded-lg hover:bg-green-600 border-4 border-white">Join Us</button>
+        </div>
+    </div>
+    <br>
+    <footer class="bg-gray-900 text-white py-8 text-center">
+        <div class="container mx-auto px-4">
+            <p class="text-gray-400">&copy; 2025 CivicConnect National Infrastructure Development. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="auth.js"></script>
+</body>
+</html>

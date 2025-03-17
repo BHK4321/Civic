@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>International Community Events</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="chatbot2.js"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="bgstyle.css">
+  <link rel="stylesheet" href="backgroundstyle.css">
+  <link rel="stylesheet" href="glass.css">
+</head>
+
+<body class="bg-gray-100 text-blue-900">
+  <video class="video-bg" autoplay muted loop>
+    <source src="Background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <nav class="bg-gray-900 text-white p-4 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="LearnMore.html" class="text-1xl font-bold">CivicConnect</a>
+      <div class="space-x-4">
+        <a id="auth-link" style="display: none;" href="signin.html" class="hover:text-gray-300 hidden">Sign In /
+            Sign Up</a>
+        <div class="flex space-x-4">
+            <button id="verifyi" style="display: none;" onclick="window.location.href = '3.html'"
+                class="hidden bg-red-600 px-4 py-2 rounded hover:bg-red-700">
+                Not-verified!
+            </button>
+            <button id="logout-btn" style="display: none;" onclick="logout()"
+                class="hidden bg-red-600 px-4 py-2 rounded hover:bg-red-700">
+                Logout
+            </button>
+        </div>
+    </div>
+    </div>
+  </nav>
+  <div class="bg-white p-16 rounded-lg shadow-lg">
+    <div class="flex justify-center mb-6 md:mb-0 md:mr-8">
+      <img src="logo.png" alt="CivicConnect Logo"
+        class="w-40 h-40 md:w-52 md:h-52 rounded-full object-cover shadow-lg border-4 border-white">
+    </div>
+    <br>
+    <div class="container mx-auto px-4">
+      <h1 class="text-4xl font-bold mb-6 flex justify-center">Upcoming International Community Events</h1>
+      <p class="text-xl mb-8 flex justify-center text-gray-800">Join global activities and connect with people
+        worldwide.</p>
+    </div>
+  </div>
+  <br>
+  <section id="events" class="container mx-auto px-6 py-16 glass-effect">
+    <h2 class="text-3xl font-bold text-center mb-12">Featured Global Events</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <i data-lucide="globe" class="w-12 h-12 text-blue-600 mb-4"></i>
+        <h3 class="text-2xl font-bold mb-4">Global Peace Walk</h3>
+        <p class="text-gray-600">An international walk to promote peace and unity among diverse cultures and
+          communities.</p>
+        <div class="mt-4 space-y-2">
+          <p><strong>Date:</strong> March 22, 2025</p>
+          <p><strong>Location:</strong> Worldwide</p>
+          <p><strong>Time:</strong> 10:00 AM - 12:00 PM</p>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <i data-lucide="music" class="w-12 h-12 text-blue-600 mb-4"></i>
+        <h3 class="text-2xl font-bold mb-4">World Music Day</h3>
+        <p class="text-gray-600">Celebrate the power of music with performances from global artists on this special day.
+        </p>
+        <div class="mt-4 space-y-2">
+          <p><strong>Date:</strong> June 21, 2025</p>
+          <p><strong>Location:</strong> Various Countries</p>
+          <p><strong>Time:</strong> All Day</p>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <i data-lucide="heart-handshake" class="w-12 h-12 text-blue-600 mb-4"></i>
+        <h3 class="text-2xl font-bold mb-4">International Volunteer Week</h3>
+        <p class="text-gray-600">Join volunteers from all over the world in giving back to communities in need.</p>
+        <div class="mt-4 space-y-2">
+          <p><strong>Date:</strong> July 1-7, 2025</p>
+          <p><strong>Location:</strong> Global Locations</p>
+          <p><strong>Time:</strong> Various</p>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <i data-lucide="palette" class="w-12 h-12 text-blue-600 mb-4"></i>
+        <h3 class="text-2xl font-bold mb-4">Global Cultural Festival</h3>
+        <p class="text-gray-600">A festival to celebrate and showcase diverse cultures through food, music, and dance.
+        </p>
+        <div class="mt-4 space-y-2">
+          <p><strong>Date:</strong> September 5-7, 2025</p>
+          <p><strong>Location:</strong> Major Cities Worldwide</p>
+          <p><strong>Time:</strong> 12:00 PM - 6:00 PM</p>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <i data-lucide="leaf" class="w-12 h-12 text-blue-600 mb-4"></i>
+        <h3 class="text-2xl font-bold mb-4">United Nations Climate Action Forum</h3>
+        <p class="text-gray-600">A global forum focused on sustainable solutions to address climate change.</p>
+        <div class="mt-4 space-y-2">
+          <p><strong>Date:</strong> October 10-12, 2025</p>
+          <p><strong>Location:</strong> Geneva, Switzerland</p>
+          <p><strong>Time:</strong> 9:00 AM - 5:00 PM</p>
+        </div>
+      </div>
+
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <i data-lucide="wine" class="w-12 h-12 text-blue-600 mb-4"></i>
+        <h3 class="text-2xl font-bold mb-4">International Food and Wine Expo</h3>
+        <p class="text-gray-600">Explore global cuisines and wine varieties at this international expo.</p>
+        <div class="mt-4 space-y-2">
+          <p><strong>Date:</strong> November 20-22, 2025</p>
+          <p><strong>Location:</strong> Paris, France</p>
+          <p><strong>Time:</strong> 10:00 AM - 6:00 PM</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+
+  <section id="news" class="container mx-auto px-6 py-16 glass-effect">
+    <h2 class="text-3xl font-bold text-center mb-12">International News & Updates</h2>
+    <div class="space-y-6">
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h4 class="text-xl font-bold mb-2">New Global Volunteer Network Launched</h4>
+        <p class="text-gray-600">A new network connects volunteers globally, making it easier to find opportunities
+          abroad.</p>
+        <p class="text-gray-400 mt-2"><i>Published: Feb 10, 2025</i></p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h4 class="text-xl font-bold mb-2">Global Cultural Festival Receives Record Participation</h4>
+        <p class="text-gray-600">This year's festival saw a 30% increase in participants from over 50 countries.</p>
+        <p class="text-gray-400 mt-2"><i>Published: Feb 5, 2025</i></p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h4 class="text-xl font-bold mb-2">Climate Action Forum Announces New Initiatives</h4>
+        <p class="text-gray-600">New sustainability projects were unveiled at the recent UN Climate Action Forum.</p>
+        <p class="text-gray-400 mt-2"><i>Published: Jan 30, 2025</i></p>
+      </div>
+    </div>
+  </section>
+  <br>
+
+  <footer class="bg-gray-900 text-white py-8 text-center">
+    <div class="container mx-auto px-4">
+      <p class="text-gray-400">&copy; 2025 CivicConnect. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="auth.js"></script>
+</body>
+
+</html>

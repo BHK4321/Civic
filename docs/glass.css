@@ -1,0 +1,11 @@
+.glass-effect {
+    background: rgba(255, 255, 255, 0.01); /* Extremely transparent */
+    backdrop-filter: blur(4px) saturate(110%); /* Minimal blur & slight vibrance */
+    -webkit-backdrop-filter: blur(4px) saturate(110%);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.03); /* Faint border */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Very soft shadow */
+    padding: 20px;
+    color: rgb(10, 10, 124);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.08); /* Even softer text glow */
+}

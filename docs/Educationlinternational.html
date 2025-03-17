@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>International Education Projects</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="chatbot2.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="bgstyle.css">
+  <link rel="stylesheet" href="glass.css">
+  <link rel="stylesheet" href="backgroundstyle.css">
+</head>
+<body class="bg-gray-100 text-blue-900">
+  <video class="video-bg" autoplay muted loop>
+    <source src="Background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <nav class="bg-gray-900 text-white p-4 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="LearnMore.html" class="text-1xl font-bold">CivicConnect</a>
+      <div class="space-x-4">
+        <a id="auth-link" style="display: none;" href="signin.html" class="hover:text-gray-300 hidden">Sign In /
+            Sign Up</a>
+        <div class="flex space-x-4">
+            <button id="verifyi" style="display: none;" onclick="window.location.href = '3.html'"
+                class="hidden bg-red-600 px-4 py-2 rounded hover:bg-red-700">
+                Not-verified!
+            </button>
+            <button id="logout-btn" style="display: none;" onclick="logout()"
+                class="hidden bg-red-600 px-4 py-2 rounded hover:bg-red-700">
+                Logout
+            </button>
+        </div>
+    </div>
+    </div>
+  </nav>
+  <div class="bg-white p-16 rounded-lg shadow-lg">
+    <div class="flex justify-center mb-6 md:mb-0 md:mr-8">
+      <img src="logo.png" alt="CivicConnect Logo" class="w-40 h-40 md:w-52 md:h-52 rounded-full object-cover shadow-lg border-4 border-white">
+    </div>
+    <br>
+    <div class="container mx-auto px-4">
+      <h1 class="text-4xl font-bold mb-6 flex justify-center">International Education Opportunities</h1>
+      <p class="text-xl mb-8 flex justify-center text-gray-800">Empowering students to study abroad and gain global exposure.</p>
+    </div>
+  </div>
+  <br>
+
+  <section id="projects" class="container mx-auto px-6 py-16 glass-effect">
+    <h2 class="text-3xl font-bold text-center mb-12">Ongoing International Education Programs</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <i data-lucide="globe" class="w-12 h-12 text-blue-600 mb-4"></i>
+        <h3 class="text-2xl font-bold mb-4">Global Scholarship Program</h3>
+        <p class="text-gray-600">Full and partial scholarships for students pursuing higher studies abroad.</p>
+        <div class="mt-4 space-y-2">
+          <p><strong>Budget:</strong> $500 Million</p>
+          <p><strong>Completion:</strong> 80% done</p>
+          <p><strong>Expected Completion:</strong> April 2025</p>
+        </div>
+      </div>
+
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <i data-lucide="book" class="w-12 h-12 text-blue-600 mb-4"></i>
+        <h3 class="text-2xl font-bold mb-4">Student Exchange Program</h3>
+        <p class="text-gray-600">Semester-long exchange programs in over 30 countries.</p>
+        <div class="mt-4 space-y-2">
+          <p><strong>Budget:</strong> $200 Million</p>
+          <p><strong>Completion:</strong> 60% done</p>
+          <p><strong>Expected Completion:</strong> May 2025</p>
+        </div>
+      </div>
+
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <i data-lucide="briefcase" class="w-12 h-12 text-blue-600 mb-4"></i>
+        <h3 class="text-2xl font-bold mb-4">Visa & Immigration Assistance</h3>
+        <p class="text-gray-600">Guidance and funding for student visa applications.</p>
+        <div class="mt-4 space-y-2">
+          <p><strong>Budget:</strong> $150 Million</p>
+          <p><strong>Completion:</strong> 70% done</p>
+          <p><strong>Expected Completion:</strong> June 2025</p>
+        </div>
+      </div>
+
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <i data-lucide="building" class="w-12 h-12 text-blue-600 mb-4"></i>
+        <h3 class="text-2xl font-bold mb-4">International Internship Programs</h3>
+        <p class="text-gray-600">Work-study programs with top universities and companies abroad.</p>
+        <div class="mt-4 space-y-2">
+          <p><strong>Budget:</strong> $300 Million</p>
+          <p><strong>Completion:</strong> 50% done</p>
+          <p><strong>Expected Completion:</strong> August 2025</p>
+        </div>
+      </div>
+
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <i data-lucide="microscope" class="w-12 h-12 text-blue-600 mb-4"></i>
+        <h3 class="text-2xl font-bold mb-4">Global Research Collaborations</h3>
+        <p class="text-gray-600">Grants for students working on research projects with international institutions.</p>
+        <div class="mt-4 space-y-2">
+          <p><strong>Budget:</strong> $600 Million</p>
+          <p><strong>Completion:</strong> 40% done</p>
+          <p><strong>Expected Completion:</strong> December 2025</p>
+        </div>
+      </div>
+
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <i data-lucide="monitor-play" class="w-12 h-12 text-blue-600 mb-4"></i>
+        <h3 class="text-2xl font-bold mb-4">Online Study Abroad Prep Courses</h3>
+        <p class="text-gray-600">Free online courses to help students prepare for entrance exams, visa interviews, and cultural adaptation.</p>
+        <div class="mt-4 space-y-2">
+          <p><strong>Budget:</strong> $100 Million</p>
+          <p><strong>Completion:</strong> 30% done</p>
+          <p><strong>Expected Completion:</strong> October 2025</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+
+  <section id="news" class="container mx-auto px-6 py-16 glass-effect">
+    <h2 class="text-3xl font-bold text-center mb-12">Latest Updates on Study Abroad</h2>
+    <div class="space-y-6">
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h4 class="text-xl font-bold mb-2">New Visa Rules for International Students</h4>
+        <p class="text-gray-600">Several countries have announced simplified visa procedures for students.</p>
+        <p class="text-gray-400 mt-2"><i>Published: Feb 15, 2025</i></p>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h4 class="text-xl font-bold mb-2">Top 10 Universities Offering Scholarships</h4>
+        <p class="text-gray-600">Check out the best universities providing full and partial scholarships for international students.</p>
+        <p class="text-gray-400 mt-2"><i>Published: Feb 10, 2025</i></p>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h4 class="text-xl font-bold mb-2">How to Apply for an Exchange Program?</h4>
+        <p class="text-gray-600">A step-by-step guide on applying for student exchange programs worldwide.</p>
+        <p class="text-gray-400 mt-2"><i>Published: Jan 28, 2025</i></p>
+      </div>
+    </div>
+  </section>
+  <br>
+
+  <div class="bg-white p-16 rounded-lg shadow-lg">
+    <h2 class="text-3xl font-bold mb-4 flex justify-center">Get Involved</h2>
+    <p class="text-xl mb-8 flex justify-center text-gray-800">Apply for scholarships, internships, and exchange programs today!</p>
+    <div class="flex justify-center"><button onclick="window.location.href = 'Contribute.html'" class="bg-green-500 text-white px-8 py-3 rounded-lg hover:bg-green-600 border-4 border-white">Apply Now</button></div>
+  </div>
+  <br>
+
+  <footer class="bg-gray-900 text-white py-8 text-center">
+    <div class="container mx-auto px-4">
+      <p class="text-gray-400">&copy; 2025 CivicConnect. All rights reserved.</p>
+    </div>
+  </footer>
+  <script>
+    lucide.createIcons();
+  </script>
+      <script src="auth.js"></script>
+</body>
+</html>

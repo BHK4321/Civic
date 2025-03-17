@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <title>National Environmental Projects</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="chatbot2.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="bgstyle.css">
+  <link rel="stylesheet" href="glass.css">
+  <link rel="stylesheet" href="backgroundstyle.css">
+</head>
+<body class="bg-gray-100 text-blue-900">
+  <video class="video-bg" autoplay muted loop>
+    <source src="Background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <nav class="bg-gray-900 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="LearnMore.html" class="text-4xl font-bold">CivicConnect</a>
+
+      <div class="space-x-4">
+        <a id="auth-link" style="display: none;" href="signin.html" class="hover:text-gray-300 hidden">Sign In /
+            Sign Up</a>
+        <div class="flex space-x-4">
+            <button id="verifyi" style="display: none;" onclick="window.location.href = '3.html'"
+                class="hidden bg-red-600 px-4 py-2 rounded hover:bg-red-700">
+                Not-verified!
+            </button>
+            <button id="logout-btn" style="display: none;" onclick="logout()"
+                class="hidden bg-red-600 px-4 py-2 rounded hover:bg-red-700">
+                Logout
+            </button>
+        </div>
+    </div>
+    </div>
+  </nav>
+
+  <div class="bg-white p-16 rounded-lg shadow-lg">
+    <div class="flex justify-center mb-6 md:mb-0 md:mr-8">
+      <img src="logo.png" alt="CivicConnect Logo" class="w-40 h-40 md:w-52 md:h-52 rounded-full object-cover shadow-lg border-4 border-white">
+    </div>
+    <br>
+    <div class="container mx-auto px-4">
+      <h1 class="text-4xl font-bold mb-6 flex justify-center">National Environmental Projects</h1>
+      <p class="text-xl mb-8 flex justify-center text-gray-800">Working towards a sustainable and eco-friendly nation through large-scale initiatives.</p>
+    </div>
+  </div>
+  <br>
+
+  <section id="projects" class="container mx-auto px-6 py-16 glass-effect">
+    <h2 class="text-3xl font-bold text-center mb-12">Ongoing National Environmental Projects</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <i class="fas fa-solar-panel text-4xl text-blue-500 mb-4"></i>
+        <h3 class="text-2xl font-bold mb-4">National Renewable Energy Expansion</h3>
+        <p class="text-gray-600">Expanding the use of solar, wind, and hydroelectric energy across the country.</p>
+        <div class="mt-4 space-y-2">
+          <p><strong>Budget:</strong> $5 Billion</p>
+          <p><strong>Completion:</strong> 35% done</p>
+          <p><strong>Expected Completion:</strong> March 2028</p>
+        </div>
+      </div>
+
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <i class="fas fa-paw text-4xl text-green-500 mb-4"></i>
+        <h3 class="text-2xl font-bold mb-4">National Wildlife Conservation</h3>
+        <p class="text-gray-600">Protecting endangered species through wildlife sanctuaries and national parks.</p>
+        <div class="mt-4 space-y-2">
+          <p><strong>Budget:</strong> $2 Billion</p>
+          <p><strong>Completion:</strong> 50% done</p>
+          <p><strong>Expected Completion:</strong> March 2025</p>
+        </div>
+      </div>
+
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <i class="fas fa-tint text-4xl text-blue-300 mb-4"></i>
+        <h3 class="text-2xl font-bold mb-4">Clean Water for All Campaign</h3>
+        <p class="text-gray-600">Ensuring access to clean and safe drinking water in every state.</p>
+        <div class="mt-4 space-y-2">
+          <p><strong>Budget:</strong> $3 Billion</p>
+          <p><strong>Completion:</strong> 45% done</p>
+          <p><strong>Expected Completion:</strong> June 2025</p>
+        </div>
+      </div>
+
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <i class="fas fa-tree text-4xl text-green-700 mb-4"></i>
+        <h3 class="text-2xl font-bold mb-4">Nationwide Tree Plantation Initiative</h3>
+        <p class="text-gray-600">Planting millions of trees in urban and rural areas across the country.</p>
+        <div class="mt-4 space-y-2">
+          <p><strong>Budget:</strong> $500 Million</p>
+          <p><strong>Completion:</strong> 30% done</p>
+          <p><strong>Expected Completion:</strong> September 2025</p>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <i class="fas fa-recycle text-4xl text-green-400 mb-4"></i>
+        <h3 class="text-2xl font-bold mb-4">National Plastic Waste Reduction</h3>
+        <p class="text-gray-600">Reducing plastic waste through national recycling programs and legislation.</p>
+        <div class="mt-4 space-y-2">
+          <p><strong>Budget:</strong> $1.5 Billion</p>
+          <p><strong>Completion:</strong> 20% done</p>
+          <p><strong>Expected Completion:</strong> 2027</p>
+        </div>
+      </div>
+
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <i class="fas fa-bus text-4xl text-blue-600 mb-4"></i>
+        <h3 class="text-2xl font-bold mb-4">Eco-Friendly Transportation Systems</h3>
+        <p class="text-gray-600">Building a sustainable and energy-efficient public transport system nationwide.</p>
+        <div class="mt-4 space-y-2">
+          <p><strong>Budget:</strong> $4 Billion</p>
+          <p><strong>Completion:</strong> 40% done</p>
+          <p><strong>Expected Completion:</strong> 2026</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+
+  <section id="news" class="container mx-auto px-6 py-16 glass-effect">
+    <h2 class="text-3xl font-bold text-center mb-12">Latest National Environmental News</h2>
+    <div class="space-y-6">
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h4 class="text-xl font-bold mb-2">National Park Expansion to Protect Endangered Species</h4>
+        <p class="text-gray-600">A new national park is being set up to preserve critical habitats for endangered species.</p>
+        <p class="text-gray-400 mt-2"><i>Published: Feb 15, 2025</i></p>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h4 class="text-xl font-bold mb-2">New Laws for Carbon Emission Reduction Nationwide</h4>
+        <p class="text-gray-600">A national strategy to cut carbon emissions by 40% by 2030 has been passed.</p>
+        <p class="text-gray-400 mt-2"><i>Published: Feb 10, 2025</i></p>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h4 class="text-xl font-bold mb-2">Government Approves Major Solar Energy Initiative</h4>
+        <p class="text-gray-600">A landmark project to install solar panels in rural areas across the country has been greenlit.</p>
+        <p class="text-gray-400 mt-2"><i>Published: Jan 28, 2025</i></p>
+      </div>
+    </div>
+  </section>
+  <br>
+
+  <div class="bg-white p-16 rounded-lg shadow-lg">
+    <h2 class="text-3xl font-bold mb-4 flex justify-center">Get Involved</h2>
+    <p class="text-xl mb-8 flex justify-center text-gray-800">Support national environmental projects by volunteering or donating.</p>
+    <div class="flex justify-center"><button onclick="window.location.href = 'Contribute.html'" class="bg-green-500 text-white px-8 py-3 rounded-lg hover:bg-green-600 border-4 border-white">Join the Movement</button></div>
+  </div>
+  <br>
+
+  <footer class="bg-gray-900 text-white py-8 text-center">
+    <div class="container mx-auto px-4">
+      <p class="text-gray-400">&copy; 2025 CivicConnect National Environmental Initiative. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="auth.js"></script>
+</body>
+</html>

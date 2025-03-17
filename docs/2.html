@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join CivicConnect - Make Your Voice Heard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="bgstyle.css">
+    <link rel="stylesheet" href="backgroundstyle.css">
+    <script src = "chatbot2.js"></script>
+</head>
+
+<body class="bg-gray-200">
+    <video class="video-bg" autoplay muted loop>
+        <source src="Background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <nav class="bg-gray-900 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="LearnMore.html" class="text-4xl font-bold">CivicConnect</a>
+            <div>
+                <div class="relative group">
+                    <a href="#" class="text-1xl font-semibold hover:text-gray-400">Help</a>
+                    <div
+                        class="absolute hidden group-hover:block bg-gray-800 text-white text-sm p-4 rounded-lg shadow-lg w-64 mt-2 left-1/2 transform -translate-x-1/2 z-10">
+                        <p>Enter your account details for registering!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav><br><br>
+    <div class = "flex justify-center">
+        <div class="mb-6 md:mb-0 md:mr-8">
+            <img src="logo.png" alt="CivicConnect Logo" class="w-40 h-40 md:w-52 md:h-52 rounded-full object-cover shadow-lg border-4 border-white">
+        </div>
+        </div>
+    
+    <div class="min-h-screen py-12 px-4">
+        <div class="container mx-auto max-w-4xl">
+            <div class="mb-12">
+                <div class="flex justify-between items-center">
+                    <div class="flex-1">
+                        <div class="w-full bg-blue-200 rounded-full h-2">
+                            <div class="w-1/3 h-2 bg-blue-600 rounded-full border-2 border-white"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-between mt-2 text-sm text-gray-600">
+                    <span>Account Details</span>
+                    <span>Civic Interests</span>
+                    <span>Verification</span>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h1 class="text-3xl font-bold mb-8 text-center">Join the Movement</h1>
+                <form id="registrationForm" class="space-y-6">
+                    <div class="space-y-4">
+                        <h2 class="text-xl font-semibold mb-4">Personal Information</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-gray-700 mb-2">First Name</label>
+                                <input type="text" id="first-name"
+                                    class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    required>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Last Name</label>
+                                <input type="text" id="last-name"
+                                    class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 mb-2">Email Address</label>
+                            <input type="email" id="email"
+                                class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
+                            <div id="email-error" class="text-red-500 text-sm mt-1 hidden">This email is already
+                                registered. Please sign in instead.</div>
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 mb-2">Password</label>
+                            <input type="password" id="password"
+                                class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
+                            <p class="text-sm text-gray-500 mt-1">Must be at least 8 characters long</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <h2 class="text-xl font-semibold mb-4">Location</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-gray-700 mb-2">City</label>
+                                <input type="text" id="city"
+                                    class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    required>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">State/Province</label>
+                                <input type="text" id="state"
+                                    class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <h2 class="text-xl font-semibold mb-4">Areas of Interest</h2>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <label class="flex items-center space-x-3">
+                                <input type="checkbox" id="local-government"
+                                    class="form-checkbox h-5 w-5 text-blue-600">
+                                <span>Local Government</span>
+                            </label>
+                            <label class="flex items-center space-x-3">
+                                <input type="checkbox" id="education" class="form-checkbox h-5 w-5 text-blue-600">
+                                <span>Education</span>
+                            </label>
+                            <label class="flex items-center space-x-3">
+                                <input type="checkbox" id="environmental-issues"
+                                    class="form-checkbox h-5 w-5 text-blue-600">
+                                <span>Environmental Issues</span>
+                            </label>
+                            <label class="flex items-center space-x-3">
+                                <input type="checkbox" id="public-safety" class="form-checkbox h-5 w-5 text-blue-600">
+                                <span>Public Safety</span>
+                            </label>
+                            <label class="flex items-center space-x-3">
+                                <input type="checkbox" id="infrastructure" class="form-checkbox h-5 w-5 text-blue-600">
+                                <span>Infrastructure</span>
+                            </label>
+                            <label class="flex items-center space-x-3">
+                                <input type="checkbox" id="community-events"
+                                    class="form-checkbox h-5 w-5 text-blue-600">
+                                <span>Community Events</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <label class="flex items-start space-x-3">
+                            <input type="checkbox" id="terms" class="form-checkbox h-5 w-5 text-blue-600 mt-1" required>
+                            <span class="text-gray-600">I agree to the <a href="#"
+                                    class="text-blue-600 hover:underline">Terms of Service</a> and <a href="#"
+                                    class="text-blue-600 hover:underline">Privacy Policy</a></span>
+                        </label>
+                    </div>
+
+                    <div id="error-message" class="text-red-500 hidden">Please fill out all required fields correctly.
+                    </div>
+                    <div class="flex justify-between space-x-4">
+                        <button type="submit" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700">
+                            Continue to Next Step
+                        </button>
+                    </div>
+                </form>
+                <br>
+                <p class="text-center">Already have an Account? <a href="signin.html"
+                        class="text-blue-700 hover:underline">Sign in</a></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-gray-900 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400">&copy; 2025 CivicConnect. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", async function (event) {
+            event.preventDefault();
+
+            const formData = {
+                firstName: document.getElementById("first-name").value,
+                lastName: document.getElementById("last-name").value,
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value,
+                city: document.getElementById("city").value,
+                state: document.getElementById("state").value,
+                interests: []
+            };
+            localStorage.setItem("userEmail", formData.email);
+            const interests = ["local-government", "education", "environmental-issues", "public-safety", "infrastructure", "community-events"];
+            interests.forEach(id => {
+                const checkbox = document.getElementById(id);
+                if (checkbox && checkbox.checked) {
+                    formData.interests.push(id);
+                }
+            });
+
+            document.getElementById("email-error").classList.add("hidden");
+
+            try {
+                const checkEmail = await fetch(`http://localhost:5000/api/users/${formData.email}`);
+                if (checkEmail.status === 200) {
+                    alert("Please sign-in email already registered!");
+                    document.getElementById("email-error").classList.remove("hidden");
+                    window.location.href = 'signin.html';
+                    return;
+                }
+                const response = await fetch('http://localhost:5000/api/users', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+                if (response.status === 201) {
+                    alert("Registration Successful!");
+                    window.location.href = "3.html";
+                } else {
+                    alert("Error in Registration");
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                alert("Registration failed. Please try again.");
+            }
+        });
+    </script>
+
+</body>
+</html>

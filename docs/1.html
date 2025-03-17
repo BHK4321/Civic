@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CivicConnect - Strengthening Democracy Through Engagement</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="glass.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        .logo {
+            width: 150px;
+            height: auto;
+            display: block;
+        }
+    </style>
+    <link rel="stylesheet" href="bgstyle.css">
+    <script src="chatbot2.js"></script>
+    <link rel="stylesheet" href="backgroundstyle.css">
+</head>
+
+<body class="bg-gray-200">
+    <video class="video-bg" autoplay muted loop>
+        <source src="Background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <nav class="bg-gray-900 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-4xl font-bold">CivicConnect</div>
+            <div class="space-x-6">
+                <a href="#mission" class="hover:text-gray-300" class="text">Mission</a>
+                <a href="#features" class="hover:text-gray-300">Features</a>
+                <a href="#participate" class="hover:text-gray-300">Get Involved</a>
+            </div>
+            <div class="space-x-4">
+                <a id="auth-link" style="display: none;" href="signin.html" class="hover:text-gray-300 hidden">Sign In /
+                    Sign Up</a>
+                <div class="flex space-x-4">
+                    <button id="verifyi" style="display: none;" onclick="window.location.href = '3.html'"
+                        class="hidden bg-red-600 px-4 py-2 rounded hover:bg-red-700">
+                        Not-verified!
+                    </button>
+                    <button id="logout-btn" style="display: none;" onclick="logout()"
+                        class="hidden bg-red-600 px-4 py-2 rounded hover:bg-red-700">
+                        Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="bg-gray-800 text-white py-20 border-4 border-white rounded-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-center md:justify-between">
+                <div class="mb-6 md:mb-0 md:mr-8">
+                    <img src="logo.png" alt="CivicConnect Logo"
+                        class="w-40 h-40 md:w-52 md:h-52 rounded-full object-cover shadow-lg border-4 border-white">
+                </div>
+                <div class="max-w-3xl text-center md:text-left">
+                    <h1 class="text-3xl font-bold mb-6">Bridging the Gap Between Citizens and Government</h1>
+                    <p class="text-xl mb-8">Building a more transparent, inclusive, and participatory democracy through
+                        digital innovation</p>
+                    <div class="space-x-4">
+                        <a href="2.html">
+                            <button type="submit" onclick="window.location.href='2.html'"
+                                class="bg-green-500 text-white px-8 py-3 rounded-lg hover:bg-green-600 border-4 border-white">
+                                Join the Movement
+                            </button>
+                        </a>
+                        <button onclick="window.location.href = 'LearnMore.html'"
+                            class="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-blue-900">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div id="mission" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center text-gray-900">Addressing Key Challenges</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+                    <div class="text-blue-600 mb-4">
+                        <svg class="h-12 w-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Trust Gap</h3>
+                    <p>Addressing the growing disconnect between citizens and public institutions through transparency
+                        initiatives</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+                    <div class="text-blue-600 mb-4">
+                        <svg class="h-12 w-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Transparency</h3>
+                    <p>Making government services and public projects more accessible and trackable for all citizens</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+                    <div class="text-blue-600 mb-4">
+                        <svg class="h-12 w-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Voter Engagement</h3>
+                    <p>Modernizing outreach and rebuilding trust in electoral systems through innovative solutions</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="features" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center text-gray-900">Platform Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold mb-4 text-blue-800">Project Tracker</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 text-green-500 mr-2" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Real-time updates on public projects</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 text-green-500 mr-2" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Budget transparency and allocation tracking</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 text-green-500 mr-2" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Interactive progress visualization</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold mb-4 text-blue-800">Civic Participation</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 text-green-500 mr-2" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Digital town halls and public forums</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 text-green-500 mr-2" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Online voting and feedback systems</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 text-green-500 mr-2" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Community initiative proposals</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow-lg mx-auto max-w-2xl"> 
+        <h3 class="text-xl font-bold mb-4 text-center text-blue-800">Community Discussions</h3>
+
+        <ul class="space-y-4">
+            <li class="flex items-start">
+                <svg class="h-6 w-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Engage in meaningful discussions with citizens from diverse backgrounds</span>
+            </li>
+            <li class="flex items-start">
+                <svg class="h-6 w-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Share your opinions, ideas, and feedback on public policies and projects</span>
+            </li>
+            <li class="flex items-start">
+                <svg class="h-6 w-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Collaborate with others to propose innovative solutions for community challenges</span>
+            </li>
+            <li class="flex items-start">
+                <svg class="h-6 w-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Participate in moderated debates to foster constructive dialogue</span>
+            </li>
+        </ul>
+    </div>
+    <br>
+    <div id="participate" class="py-16 glass-effect text-white border-4 border-white rounded-lg">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-8 text-blue-800">Be Part of the Change</h2>
+                <p class="text-xl mb-8 text-gray-800">Join thousands of citizens working to build a more transparent and
+                    participatory
+                    democracy</p>
+                <div class="flex justify-center space-x-4">
+                    <a href="2.html">
+                        <button type="submit" onclick="window.location.href='2.html'"
+                            class="bg-green-500 px-6 py-3 text-white rounded-lg hover:bg-green-600 border-4 border-white">Get
+                            Started</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl font-bold text-blue-600 mb-2">500K+</div>
+                    <div class="text-gray-600">Active Citizens</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-blue-600 mb-2">1000+</div>
+                    <div class="text-gray-600">Public Projects Tracked</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-blue-600 mb-2">250+</div>
+                    <div class="text-gray-600">Partner Communities</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-blue-600 mb-2">85%</div>
+                    <div class="text-gray-600">Engagement Rate</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">CivicConnect</h3>
+                    <p class="text-gray-400">Building stronger communities through transparency and engagement</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Resources</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Documentation</a></li>
+                        <li><a href="#" class="hover:text-white">API Access</a></li>
+                        <li><a href="#" class="hover:text-white">Case Studies</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Legal</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white">Data Protection</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Connect</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Twitter</a></li>
+                        <li><a href="#" class="hover:text-white">LinkedIn</a></li>
+                        <li><a href="#" class="hover:text-white">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
+                <p>&copy; 2025 CivicConnect. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="auth.js"></script>
+</body>
+
+</html>
