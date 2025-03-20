@@ -1,5 +1,3 @@
-# Project
-Project for Debugit Hackathon
 
 # CivicConnect
 # Backend Overview
