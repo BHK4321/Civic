@@ -1,24 +1,38 @@
 async function checkUserStatus() {
     const email = localStorage.getItem("userEmail");
-    if (!email) {
-        return 1; 
+    const token = localStorage.getItem("jwtToken");
+    console.log(email);
+    console.log(token);
+    if (!email || !token) {
+        return 1; // No email or token found, user is not logged in
     }
 
     try {
-        const verificationResponse = await fetch(`http://localhost:5000/api/users/${email}`);
+    console.log(email);
 
-        if (!verificationResponse.ok) {
-            return 2;
+        const verificationResponse = await fetch(`http://localhost:5000/api/users/${email}`, {
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${token}`, // Attach the token
+                "Content-Type": "application/json"
+            }
+        });
+        const data = await verificationResponse.json();
+        if (!data.valid) {
+            return 1; // Token is invalid or user is unauthorized
         }
-
-        const verificationData = await verificationResponse.json();
-
-        return verificationData.isVerified ? 3 : 2;
+        if(verificationResponse.status == 403){
+            alert("Unauthorized access");
+            return;
+        }
+        console.log(data.user.isVerified);
+        return data.user.isVerified ? 3 : 2; // If valid, return 3, otherwise return 2
     } catch (error) {
         console.error("Error checking user status:", error);
-        return 2; 
+        return 2; // Default to unauthorized in case of an error
     }
 }
+
 async function handleUserAccess() {
     const cases = await checkUserStatus();
     console.log("User Status:", cases);
@@ -39,9 +53,15 @@ async function handleUserAccess() {
     }
 }
     handleUserAccess();
-
-
-    function logout(){
-        localStorage.clear();
-        location.reload();
-     }
+   async function logout() {
+        const log = await fetch(`http://localhost:5000/api/logout`,{
+             method : "POST",
+             headers: {
+                "Content-Type": "application/json"
+            }
+        });
+        localStorage.removeItem("jwtToken");
+        localStorage.removeItem("userEmail");
+        alert("Logged out!");
+        window.location.href = "index.html";
+    }

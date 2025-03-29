@@ -19,11 +19,11 @@
     </div>
     <nav class="bg-gray-900 text-white p-4">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="LearnMore.html" class="text-4xl font-bold">CivicConnect</a>
-            <div class="space-x-4">
+            <a href="LearnMore.html" class="text-4xl font-semibold">CivicConnect</a>
+            <div class = "flex space-x-4 items-center"> 
+                <a href="1.html" class = "hover:text-gray-300 text-semibold">Home</a>
                 <a id="auth-link" style="display: none;" href="signin.html" class="hover:text-gray-300 hidden">Sign In /
                     Sign Up</a>
-                <div class="flex space-x-4">
                     <button id="verifyi" style="display: none;" onclick="window.location.href = '3.html'"
                         class="hidden bg-red-600 px-4 py-2 rounded hover:bg-red-700">
                         Not-verified!
@@ -32,9 +32,8 @@
                         class="hidden bg-red-600 px-4 py-2 rounded hover:bg-red-700">
                         Logout
                     </button>
-                </div>
-            </div>
         </div>
+    </div>
     </nav>
     <br><br>
     <div class="mb-6 md:mb-0 md:mr-8 flex justify-center" >
@@ -165,27 +164,41 @@
 </body>
 </html>
 <script>
-        async function checkUserStatus() {
+       async function checkUserStatus() {
     const email = localStorage.getItem("userEmail");
-    if (!email) {
-        return 1; 
+    const token = localStorage.getItem("jwtToken");
+    console.log(email);
+    console.log(token);
+    if (!email || !token) {
+        return 1; // No email or token found, user is not logged in
     }
 
     try {
-        const verificationResponse = await fetch(`http://localhost:5000/api/users/${email}`);
+    console.log(email);
 
-        if (!verificationResponse.ok) {
-            return 2;
+        const verificationResponse = await fetch(`http://localhost:5000/api/users/${email}`, {
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${token}`, // Attach the token
+                "Content-Type": "application/json"
+            }
+        });
+        const data = await verificationResponse.json();
+        if (!data.valid) {
+            return 1; // Token is invalid or user is unauthorized
         }
-
-        const verificationData = await verificationResponse.json();
-
-        return verificationData.isVerified ? 3 : 2;
+        if(verificationResponse.status == 403){
+            alert("Unauthorized access");
+            return;
+        }
+        console.log(data.user.isVerified);
+        return data.user.isVerified ? 3 : 2; // If valid, return 3, otherwise return 2
     } catch (error) {
         console.error("Error checking user status:", error);
-        return 2; 
+        return 2; // Default to unauthorized in case of an error
     }
 }
+
 async function handleUserAccess() {
     const cases = await checkUserStatus();
     console.log("User Status:", cases);

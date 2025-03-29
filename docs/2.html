@@ -11,6 +11,63 @@
     <link rel="stylesheet" href="bgstyle.css">
     <link rel="stylesheet" href="backgroundstyle.css">
     <script src = "chatbot2.js"></script>
+    <script>
+ async function checkUserStatus() {
+    const email = localStorage.getItem("userEmail");
+    const token = localStorage.getItem("jwtToken");
+    console.log(email);
+    console.log(token);
+    if (!email || !token) {
+        return 1; // No email or token found, user is not logged in
+    }
+
+    try {
+    console.log(email);
+
+        const verificationResponse = await fetch(`http://localhost:5000/api/users/${email}`, {
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${token}`, // Attach the token
+                "Content-Type": "application/json"
+            }
+        });
+        const data = await verificationResponse.json();
+        if (!data.valid) {
+            return 1; // Token is invalid or user is unauthorized
+        }
+        if(verificationResponse.status == 403){
+            alert("Unauthorized access");
+            return;
+        }
+        console.log(data.user.isVerified);
+        return data.user.isVerified ? 3 : 2; // If valid, return 3, otherwise return 2
+    } catch (error) {
+        console.error("Error checking user status:", error);
+        return 2; // Default to unauthorized in case of an error
+    }
+}
+
+async function handleUserAccess() {
+    const cases = await checkUserStatus();
+    console.log("User Status:", cases);
+    if (cases === 1) {
+        // document.getElementById("communityIframe").onload = function() {
+        //     document.getElementById("Communitytalks").style.display = "block";
+        // };
+    } else if (cases === 2) {
+        // document.getElementById("communityIframe").onload = function() {
+        //     document.getElementById("Communitytalks").style.display = "block";
+        // };
+        alert("User already logged in! Please verify your identity!");
+        window.location.href = '4.html';
+    } else {
+        alert("User already logged in!");
+        window.location.href = '1.html';
+    }
+}
+    handleUserAccess();
+
+    </script>
 </head>
 
 <body class="bg-gray-200">
@@ -20,15 +77,10 @@
     </video>
     <nav class="bg-gray-900 text-white p-4">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="LearnMore.html" class="text-4xl font-bold">CivicConnect</a>
-            <div>
-                <div class="relative group">
-                    <a href="#" class="text-1xl font-semibold hover:text-gray-400">Help</a>
-                    <div
-                        class="absolute hidden group-hover:block bg-gray-800 text-white text-sm p-4 rounded-lg shadow-lg w-64 mt-2 left-1/2 transform -translate-x-1/2 z-10">
-                        <p>Enter your account details for registering!</p>
-                    </div>
-                </div>
+            <a href="LearnMore.html" class="text-4xl font-semibold">CivicConnect</a>
+            <div class = "space-x-6"> 
+                <a href="1.html" class = "hover:text-gray-300 text-semibold">Home</a>
+                <a href="Contribute.html" class = "hover:text-gray-300 text-semibold">Community talks</a>
             </div>
         </div>
     </nav><br><br>
@@ -141,6 +193,7 @@
                             </label>
                         </div>
                     </div>
+                    
                     <div class="space-y-4">
                         <label class="flex items-start space-x-3">
                             <input type="checkbox" id="terms" class="form-checkbox h-5 w-5 text-blue-600 mt-1" required>
@@ -149,7 +202,11 @@
                                     class="text-blue-600 hover:underline">Privacy Policy</a></span>
                         </label>
                     </div>
-
+                    <label class="flex items-center">
+                        <input type="checkbox" id="rememberMe" class="mr-2">
+                        <span class="text-gray-700">Remember Me</span>
+                    </label>
+                    <!-- <a href="forgot-password.html" class="text-blue-600 hover:underline">Forgot Password?</a> -->
                     <div id="error-message" class="text-red-500 hidden">Please fill out all required fields correctly.
                     </div>
                     <div class="flex justify-between space-x-4">
@@ -181,7 +238,8 @@
                 password: document.getElementById("password").value,
                 city: document.getElementById("city").value,
                 state: document.getElementById("state").value,
-                interests: []
+                interests: [],
+                rememberMe: document.getElementById("rememberMe").checked
             };
             localStorage.setItem("userEmail", formData.email);
             const interests = ["local-government", "education", "environmental-issues", "public-safety", "infrastructure", "community-events"];
@@ -195,8 +253,14 @@
             document.getElementById("email-error").classList.add("hidden");
 
             try {
-                const checkEmail = await fetch(`http://localhost:5000/api/users/${formData.email}`);
-                if (checkEmail.status === 200) {
+                const checkEmail = await fetch(`http://localhost:5000/api/users/${formData.email}`, {
+    method: "GET",
+    headers: {
+        "Content-Type": "application/json"
+    }
+});
+
+                if (checkEmail.valid) {
                     alert("Please sign-in email already registered!");
                     document.getElementById("email-error").classList.remove("hidden");
                     window.location.href = 'signin.html';
@@ -207,11 +271,12 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(formData)
                 });
-                if (response.status === 201) {
+                console.log(response);
+                if(response.status == 200){
+                    const data = await response.json();
+                    localStorage.setItem("jwtToken", data.token);
                     alert("Registration Successful!");
                     window.location.href = "3.html";
-                } else {
-                    alert("Error in Registration");
                 }
             } catch (error) {
                 console.error("Error:", error);

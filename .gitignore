@@ -1,18 +1,28 @@
-# This .gitignore is appropriate for repositories deployed to GitHub Pages and using
-# a Gemfile as specified at https://github.com/github/pages-gem#conventional
+# ENVIRONMENT VARIABLES
 
-# Basic Jekyll gitignores (synchronize to Jekyll.gitignore)
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
+#data-base connection
 
-# Additional Ruby/bundler ignore for when you run: bundle install
-/vendor
+MONGO_URI=your_mongodb_connection_string
 
-# Specific ignore for GitHub Pages
-# GitHub Pages will always use its own deployed version of pages-gem 
-# This means GitHub Pages will NOT use your Gemfile.lock and therefore it is
-# counterproductive to check this file into the repository.
-# Details at https://github.com/github/pages-gem/issues/768
-Gemfile.lock
+PORT=5000
+###############################################
+#Authentication
+
+JWT_SECRET = your_jwt_key_for_authentication
+ENCRYPTION_KEY = key_for_encrypting_data
+###############################################
+# For Sending Mails (App-pasword)
+
+EMAIL_SERVER= your_email (For the server deployed on render : bhaskarpandey787@gmail.com)
+
+EMAIL_PASS= App_password_provided_by_Google
+
+FRONTEND_URL = https://bhk4321.github.io/Devbits/
+###############################################
+# Google sign-in (OAuth2.0 authorization)
+
+GOOGLE_CLIENT_ID = Your_Google_buisness_client_ID
+
+GOOGLE_CLIENT_SECRET= Your_Google_client_key
+
+SESSION_SECRET = Your_session_secret_key
